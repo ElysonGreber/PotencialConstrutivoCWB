@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Lote</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-5">
+    <h2 class="mb-4">Consulta de Lote por Indicação Fiscal</h2>
+    <form method="POST" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="indicacao_fiscal" class="form-control" placeholder="Digite a indicação fiscal" required>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+    </form>
+    {% if mensagem %}
+        <div class="alert alert-warning">{{ mensagem }}</div>
+    {% endif %}
+    {% if tabela %}
+        {{ tabela | safe }}
+    {% endif %}
+</body>
+</html>
